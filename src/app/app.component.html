@@ -1,3 +1,37 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <md-toolbar color="primary">    
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>menu</md-icon>
+    </button>    
+
+    <span>Yay, Material in Angular 2!</span>
+    
+    <span><md-icon>help_outline</md-icon></span>    
+  </md-toolbar>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item>Logout</button>
+    <button md-menu-item>Goods receipt</button>
+  </md-menu>
+
+  <md-card>
+    <button md-button>All</button>
+    <button md-raised-button>Of</button>
+    <button md-raised-button color="primary">The</button>
+    <button md-raised-button color="accent">Buttons</button>
+  </md-card>
+
+  <span class="done">
+    <button md-fab>
+      <md-icon>check circle</md-icon>
+    </button>
+  </span>
+
+
+<!--<video id="video" width="640" height="480" autoplay></video>-->
+<!--<button id="capture" (click)="handleButtonClick()">Capture</button>-->
+<!--<canvas id="snapshot" width="640" height="480"></canvas>-->
+
+
+</div>
+
+<app-camera></app-camera>
