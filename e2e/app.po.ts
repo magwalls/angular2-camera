@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class ScanwarePage {
+export class angular2-cameraPage {
   navigateTo() {
     return browser.get('/');
   }

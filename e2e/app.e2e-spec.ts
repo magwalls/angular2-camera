@@ -1,10 +1,10 @@
-import { ScanwarePage } from './app.po';
+import { angular2-cameraPage } from './app.po';
 
-describe('scanware App', function() {
-  let page: ScanwarePage;
+describe('angular2-camera App', function() {
+  let page: angular2-cameraPage;
 
   beforeEach(() => {
-    page = new ScanwarePage();
+    page = new angular2-cameraPage();
   });
 
   it('should display message saying app works', () => {
