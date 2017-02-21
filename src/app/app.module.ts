@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CameraComponent } from './camera/camera.component';
 import { LoginComponent } from './login/login.component';
+import { CameraService } from './camera/camera.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ CameraService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

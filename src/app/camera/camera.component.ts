@@ -1,9 +1,11 @@
 import { Component, OnInit, AfterViewInit, ViewChild, Input } from '@angular/core';
+import { CameraService } from './camera.service';
 
 @Component({
   selector: 'app-camera',
   templateUrl: './camera.component.html',
-  styleUrls: ['./camera.component.css']
+  styleUrls: ['./camera.component.css'],
+  providers: [ CameraService ]
 })
 export class CameraComponent implements OnInit, AfterViewInit {
   @ViewChild('videoplayer') videoPlayer: any;
@@ -14,10 +16,22 @@ export class CameraComponent implements OnInit, AfterViewInit {
   @Input() width: number;
   @Input() height: number;
 
-  constructor() { }
+  constructor(private cameraService: CameraService) { }
 
   capture() {
     this.context.drawImage(this.videoPlayer.nativeElement, 0, 0, this.width, this.height);
+  }
+
+  saveImage() {
+    let imgData: any = this.canvas.nativeElement.toDataURL('img/png');
+    // console.log(imgData);
+
+    imgData = imgData.replace('data:image/png;base64,', '');
+
+    let postData: any = JSON.stringify({ imageData: imgData });
+
+//     console.log(postData);
+     this.cameraService.saveImage(postData);
   }
 
   ngOnInit() {
