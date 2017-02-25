@@ -1,8 +1,24 @@
-<p>
-  Camera works!
-</p>
+<div [hidden]="showVideo">
 <video #videoplayer [width]="width" [height]="height" autoplay></video>
 <button id="snap" (click)="capture()">Snap Photo</button>
+</div>
+<div [hidden]="!showVideo">
 <canvas #canvas [width]="width" [height]="height"></canvas>
-
 <button id="save" (click)="saveImage()">Save Photo</button>
+</div>
+<div *ngIf="showVideo">video</div>
+<div *ngIf="!showVideo">canvas</div>
+
+<form>
+<!--md-input ska egentligen vara mdInput men det blev tokigt. Ska uppgradera Angular2 så kanske det rullar-->
+<md-input-container>
+      <input #identifier md-input placeholder="Identifier" id="identifier">
+  </md-input-container>
+  <md-input-container>
+      <input #comment md-input placeholder="Comment" id="comment">
+  </md-input-container>
+</form>    
+<p>{{comment.value}}</p>
+
+<p>Longitude is {{longitude}}</p>
+<p>Latitude is {{latitude}}</p>
