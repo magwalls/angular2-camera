@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { CameraComponent } from './camera/camera.component';
 import { LoginComponent } from './login/login.component';
 import { CameraService } from './camera/camera.service';
+import { HelpComponent } from './help/help.component';
+import { MenuComponent } from './menu/menu.component'
+import { AppService } from './shared/services/app.service';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,8 +24,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CameraComponent,
-    LoginComponent
+    LoginComponent,
+    HelpComponent,
+    MenuComponent
   ],
+   entryComponents: [HelpComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -30,7 +36,7 @@ const appRoutes: Routes = [
     MaterialModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ CameraService ],
+  providers: [ AppService, CameraService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

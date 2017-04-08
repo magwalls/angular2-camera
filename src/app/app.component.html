@@ -6,7 +6,10 @@
 
     <span>Wallsoft Angular2 Lab</span>
     
-    <span><md-icon>help_outline</md-icon></span>    
+    <!--<span (click)="openHelpDialog()"><md-icon>help_outline</md-icon></span>    -->
+    <button md-icon-button (click)="openHelpDialog()">
+      <md-icon>help_outline</md-icon>
+    </button> 
   </md-toolbar>
   <md-menu x-position="before" #menu="mdMenu">
     <button md-menu-item>Logout</button>
@@ -26,7 +29,7 @@
     </button>
   </span>
 
-
+User name (test): {{appService.user}}
 <!--<video id="video" width="640" height="480" autoplay></video>-->
 <!--<button id="capture" (click)="handleButtonClick()">Capture</button>-->
 <!--<canvas id="snapshot" width="640" height="480"></canvas>-->
